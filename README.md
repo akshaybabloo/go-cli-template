@@ -2,13 +2,17 @@
 
 A template for writing Go CLI
 
-## Requirements
+- [1. Requirements](#1-requirements)
+- [2. Usage](#2-usage)
+- [3. Features](#3-features)
+
+## 1. Requirements
 
 1. Python 3.6+
    1. Install [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 2. Go 1.16+
 
-## Usage
+## 2. Usage
 
 In your terminal type in
 
@@ -20,7 +24,7 @@ Then follow the options on the terminal.
 
 Once done, you will have to refactor the module path in `go.mod` to suit your project name
 
-## Features
+## 3. Features
 
 1. Checks for updates once every 24 hours
 2. Uses [Cobra](https://github.com/spf13/cobra) package for CLI
