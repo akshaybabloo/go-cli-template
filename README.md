@@ -1,6 +1,6 @@
 # Go CLI Template
 
-A template for writing Go CLI
+A template for writing Go CLI. Inspired by GitHub CLI package.
 
 - [1. Requirements](#1-requirements)
 - [2. Usage](#2-usage)
