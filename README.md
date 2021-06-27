@@ -23,9 +23,10 @@ Once done, you will have to refactor the module path in `go.mod` to suit your pr
 ## Features
 
 1. Checks for updates once every 24 hours
-2. Factory based approach, functions are available on every command if needed
-3. Global debug flag - uses [logrus](https://github.com/sirupsen/logrus)
-4. Custom help output that also displays aliases
-5. Uses custom color that's available via factory - uses [color](https://github.com/fatih/color)
-6. Default global configuration location - `<user folder>/config.yaml`
+2. Uses [Cobra](https://github.com/spf13/cobra) package for CLI
+3. Factory based approach, functions are available on every command if needed
+4. Global debug flag - uses [logrus](https://github.com/sirupsen/logrus)
+5. Custom help output that also displays aliases
+6. Uses custom color that's available via factory - uses [color](https://github.com/fatih/color)
+7. Default global configuration location - `<user folder>/config.yaml`
    1. Disable colour usage globally
