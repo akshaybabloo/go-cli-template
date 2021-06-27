@@ -5,6 +5,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 
+	"github.com/akshaybabloo/go-cli-template/cmd/info"
 	"github.com/akshaybabloo/go-cli-template/cmd/version"
 	"github.com/akshaybabloo/go-cli-template/pkg/factory"
 )
@@ -35,11 +36,12 @@ func NewRootCmd(f *factory.Factory, appVersion, buildDate string) *cobra.Command
 	rootCmd.SetFlagErrorFunc(rootFlagErrorFunc)
 
 	rootCmd.AddCommand(version.NewCmdVersion(appVersion, buildDate))
-
 	rootCmd.SetVersionTemplate(formattedVersion)
 	rootCmd.Version = formattedVersion
 	rootCmd.Flags().Bool("version", false, "Show {{cookiecutter.project_name}} version")
 	rootCmd.PersistentFlags().BoolVarP(&f.Debug, "debug", "d", false, "Debug output")
+
+	rootCmd.AddCommand(info.NewInfoCmd(f, formattedVersion))
 
 	rootCmd.SuggestionsMinimumDistance = 1
 
