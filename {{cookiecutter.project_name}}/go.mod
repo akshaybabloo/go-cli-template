@@ -6,7 +6,7 @@ require (
 	github.com/MakeNowJust/heredoc v1.0.0
 	github.com/cli/cli v1.11.0
 	github.com/fatih/color v1.7.0
-	github.com/google/uuid v1.2.0 // indirect
+	github.com/google/uuid v1.2.0
 	github.com/hashicorp/go-version v1.3.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/afero v1.1.2
