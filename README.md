@@ -32,5 +32,5 @@ Once done, you will have to refactor the module path in `go.mod` to suit your pr
 4. Global debug flag - uses [logrus](https://github.com/sirupsen/logrus)
 5. Custom help output that also displays aliases
 6. Uses custom color that's available via factory - uses [color](https://github.com/fatih/color)
-7. Default global configuration location - `<user folder>/config.yaml`
+7. Default global configuration location - `<user folder>/<project name>/config.yaml`
    1. Disable colour usage globally
