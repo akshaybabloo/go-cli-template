@@ -20,20 +20,20 @@ func main() {
 
 	updateMessageChan := make(chan *update.ReleaseInfo)
 	go func(v string, f *factory.Factory) {
-		versionInfo, _ := update.CheckForNewRex(v, f)
+		versionInfo, _ := update.CheckForNewUpdate(v, f)
 		updateMessageChan <- versionInfo
 	}(Version, f)
 
-	// create `<user directory>/.config/rex/' path
+	// create `<user directory>/.config/{{cookiecutter.project_name}}/' path
 	home, err := os.UserHomeDir()
 	if err != nil {
 		panic(err)
 	}
-	rexFolder := path.Join(home, ".config", "rex")
-	_, err = os.Stat(rexFolder)
+	configFolder := path.Join(home, ".config", "{{cookiecutter.project_name}}")
+	_, err = os.Stat(configFolder)
 	if err != nil {
 		if os.IsNotExist(err) {
-			if err := os.MkdirAll(rexFolder, 0777); err != nil {
+			if err := os.MkdirAll(configFolder, 0777); err != nil {
 				panic(err)
 			}
 		} else {
@@ -41,7 +41,7 @@ func main() {
 		}
 	}
 
-	// creates `<user directory>/.config/rex/config.yaml'
+	// creates `<user directory>/.config/{{cookiecutter.project_name}}/config.yaml'
 	// and add default values
 	globalConfig, err := f.Config().GetGlobalConfigPath()
 	if err != nil {
@@ -74,7 +74,7 @@ func main() {
 	newRelease := <-updateMessageChan
 	if newRelease != nil {
 		fmt.Printf("\n\n%s %s → %s\n",
-			cs.GreenString("A new release of rex is available:"),
+			cs.GreenString("A new release of {{cookiecutter.project_name}} is available:"),
 			cs.GreenString(Version),
 			cs.GreenString(newRelease.Version))
 		fmt.Printf("%s\n\n", cs.GreenString(newRelease.URL))

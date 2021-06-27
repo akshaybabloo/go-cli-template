@@ -24,8 +24,8 @@ type StateEntry struct {
 	LatestRelease      ReleaseInfo `yaml:"latest_release"`
 }
 
-// CheckForNewRex checks for new version and returns its information if one exists.
-func CheckForNewRex(v string, f *factory.Factory) (*ReleaseInfo, error) {
+// CheckForNewUpdate checks for new version and returns its information if one exists.
+func CheckForNewUpdate(v string, f *factory.Factory) (*ReleaseInfo, error) {
 
 	path, err := f.Config().StatePath()
 	if err != nil {
@@ -67,7 +67,7 @@ func CheckForNewRex(v string, f *factory.Factory) (*ReleaseInfo, error) {
 func latestRelease() (*ReleaseInfo, error) {
 	var releaseInfo ReleaseInfo
 
-	get, err := http.Get("https://api.github.com/repos/akshaybabloo/rex/releases/latest")
+	get, err := http.Get("https://{{cookiecutter.github_repo_url}}/releases/latest")
 	if err != nil {
 		return nil, err
 	}

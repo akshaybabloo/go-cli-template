@@ -185,7 +185,7 @@ func rootHelpFunc(cs colours.Colours, command *cobra.Command, args []string) {
 		helpEntries = append(helpEntries, helpEntry{"ENVIRONMENT VARIABLES", command.Annotations["help:environment"]})
 	}
 	helpEntries = append(helpEntries, helpEntry{"LEARN MORE", `
-Use 'rex <command> <subcommand> --help' for more information about a command.`})
+Use '{{cookiecutter.project_name}} <command> <subcommand> --help' for more information about a command.`})
 	if _, ok := command.Annotations["help:feedback"]; ok {
 		helpEntries = append(helpEntries, helpEntry{"FEEDBACK", command.Annotations["help:feedback"]})
 	}

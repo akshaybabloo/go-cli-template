@@ -1,0 +1,6 @@
+{
+  "project_name": "Name of the project. This will also be the root command name",
+  "github_repo_url": "GitHub repository URL without https://",
+  "short_description": "Short description of your command line",
+  "long_description": "Long description of your command line"
+}

@@ -34,8 +34,8 @@ func (c *configStubs) Base() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	rexFolder := path.Join(home, ".config", "rex")
-	return rexFolder, nil
+	configFolder := path.Join(home, ".config", "{{cookiecutter.project_name}}")
+	return configFolder, nil
 }
 
 // StatePath returns the state path
