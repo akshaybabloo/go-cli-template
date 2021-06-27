@@ -18,6 +18,8 @@ In your terminal type in
 
 Then follow the options on the terminal.
 
+Once done, you will have to refactor the module path in `go.mod` to suit your project name
+
 ## Features
 
 1. Checks for updates once every 24 hours
